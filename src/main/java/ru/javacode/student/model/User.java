@@ -3,15 +3,17 @@ package ru.javacode.student.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 import ru.javacode.student.model.view.Views;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {

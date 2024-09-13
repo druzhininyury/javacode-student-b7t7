@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @PostMapping
-    public @JsonView(Views.User.Full.class) User addUser(@RequestBody @JsonView(Views.User.New.class) @Valid User user) {
+    public @JsonView(Views.User.Full.class) User addUser(@RequestBody @JsonView(Views.User.New.class) @Validated(Views.User.New.class) User user) {
         return userService.addUser(user);
     }
 
